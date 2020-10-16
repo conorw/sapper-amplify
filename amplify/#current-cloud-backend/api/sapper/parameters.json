@@ -1,0 +1,11 @@
+{
+    "AppSyncApiName": "sapper",
+    "DynamoDBBillingMode": "PAY_PER_REQUEST",
+    "DynamoDBEnableServerSideEncryption": false,
+    "AuthCognitoUserPoolId": {
+        "Fn::GetAtt": [
+            "authamplifyserver259e6110",
+            "Outputs.UserPoolId"
+        ]
+    }
+}

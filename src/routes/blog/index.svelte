@@ -1,13 +1,13 @@
-<script context="module" lang="ts">
+<script context="module">
 	export function preload() {
-		return this.fetch(`blog.json`).then((r: { json: () => any; }) => r.json()).then((posts: { slug: string; title: string, html: any }[]) => {
+		return this.fetch(`blog.json`).then(r => r.json()).then(posts => {
 			return { posts };
 		});
 	}
 </script>
 
-<script lang="ts">
-	export let posts: { slug: string; title: string, html: any }[];
+<script>
+	export let posts;
 </script>
 
 <style>
