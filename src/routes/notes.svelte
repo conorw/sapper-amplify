@@ -1,9 +1,11 @@
-<script  >
-	import Amplify from '@aws-amplify/core';
-	import aws_exports from '../aws-exports';
+<script lang="ts">
+	// import Amplify from '@aws-amplify/core';
+	// import aws_exports from '../aws-exports';
+	// import {Post } from '../models/index';
 
-	// in this way you are only importing Auth and configuring it.
-	Amplify.configure(aws_exports);
+	// // in this way you are only importing Auth and configuring it.
+	// Amplify.configure(aws_exports);
+	// let posts = Post[];
 </script>
 <svelte:head>
 	<title>Notes</title>
