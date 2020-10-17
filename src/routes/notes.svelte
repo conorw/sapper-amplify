@@ -19,17 +19,19 @@
 	}
 
 	async function subscribeToBlogs(){
-
+		try {
 		const subscription: any = await API.graphql(
-			graphqlOperation(onCreateBlog)
+			graphqlOperation(onCreateBlog, {authMode: 'API_KEY'})
 		);
-		console.log(subscription);
-		subscription.subscribe((eventData) => {
-			if(eventData){
-				posts.push(new Blog({...eventData, posts: []}));
-			}
+			console.log(subscription);
+			subscription.subscribe((eventData) => {
+				if(eventData){
+					posts.push(new Blog({...eventData, posts: []}));
+				}
+			});
+		} catch (error) {
+			console.log(error);
 		}
-		);
 
 	}
 

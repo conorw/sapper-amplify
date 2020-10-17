@@ -12,7 +12,11 @@ export const createBlog = /* GraphQL */ `
       name
       posts {
         nextToken
+        startedAt
       }
+      _version
+      _deleted
+      _lastChangedAt
       createdAt
       updatedAt
     }
@@ -28,7 +32,11 @@ export const updateBlog = /* GraphQL */ `
       name
       posts {
         nextToken
+        startedAt
       }
+      _version
+      _deleted
+      _lastChangedAt
       createdAt
       updatedAt
     }
@@ -44,7 +52,11 @@ export const deleteBlog = /* GraphQL */ `
       name
       posts {
         nextToken
+        startedAt
       }
+      _version
+      _deleted
+      _lastChangedAt
       createdAt
       updatedAt
     }
@@ -63,12 +75,19 @@ export const createPost = /* GraphQL */ `
       blog {
         id
         name
+        _version
+        _deleted
+        _lastChangedAt
         createdAt
         updatedAt
       }
       comments {
         nextToken
+        startedAt
       }
+      _version
+      _deleted
+      _lastChangedAt
       createdAt
       updatedAt
     }
@@ -87,12 +106,19 @@ export const updatePost = /* GraphQL */ `
       blog {
         id
         name
+        _version
+        _deleted
+        _lastChangedAt
         createdAt
         updatedAt
       }
       comments {
         nextToken
+        startedAt
       }
+      _version
+      _deleted
+      _lastChangedAt
       createdAt
       updatedAt
     }
@@ -111,12 +137,19 @@ export const deletePost = /* GraphQL */ `
       blog {
         id
         name
+        _version
+        _deleted
+        _lastChangedAt
         createdAt
         updatedAt
       }
       comments {
         nextToken
+        startedAt
       }
+      _version
+      _deleted
+      _lastChangedAt
       createdAt
       updatedAt
     }
@@ -135,10 +168,16 @@ export const createComment = /* GraphQL */ `
         title
         content
         blogID
+        _version
+        _deleted
+        _lastChangedAt
         createdAt
         updatedAt
       }
       content
+      _version
+      _deleted
+      _lastChangedAt
       createdAt
       updatedAt
     }
@@ -157,10 +196,16 @@ export const updateComment = /* GraphQL */ `
         title
         content
         blogID
+        _version
+        _deleted
+        _lastChangedAt
         createdAt
         updatedAt
       }
       content
+      _version
+      _deleted
+      _lastChangedAt
       createdAt
       updatedAt
     }
@@ -179,10 +224,16 @@ export const deleteComment = /* GraphQL */ `
         title
         content
         blogID
+        _version
+        _deleted
+        _lastChangedAt
         createdAt
         updatedAt
       }
       content
+      _version
+      _deleted
+      _lastChangedAt
       createdAt
       updatedAt
     }

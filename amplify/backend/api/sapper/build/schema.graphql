@@ -1,4 +1,4 @@
-type Blog {
+type Blog @aws_api_key {
   id: ID!
   name: String!
   posts(filter: ModelPostFilterInput, sortDirection: ModelSortDirection, limit: Int, nextToken: String): ModelPostConnection
