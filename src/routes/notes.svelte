@@ -1,5 +1,6 @@
 <script lang="ts">
- 	import {listBlogs, listPosts} from '../graphql/queries';
+	 import {listBlogs, listPosts} from '../graphql/queries';
+	 import {createBlog} from '../graphql/mutations';
  	import {onCreatePost} from '../graphql/subscriptions';
  	import { API, graphqlOperation } from 'aws-amplify';
  	import callGraphQL from "../models/graphql-api";
@@ -10,12 +11,18 @@
 
 	// in this way you are only importing Auth and configuring it.
 	let posts: any[] = [];
-	async function getPosts(){
+	async function getBlogs(){
 		//const result = await callGraphQL<ListBlogsQuery>(graphqlOperation(listBlogs));
-			const result = await API.graphql(graphqlOperation(listBlogs));
-			// posts = result.data.listBlogs.items;
+			// const result = await API.graphql(graphqlOperation(listBlogs));
+			const result = await callGraphQL<ListBlogsQuery>(listBlogs);
+			posts = result.data.listBlogs.items;
 	}
-	getPosts();
+	async function addBlog(){
+		//const result = await callGraphQL<ListBlogsQuery>(graphqlOperation(listBlogs));
+			const result = await API.graphql(graphqlOperation(createBlog, {input: {name: 'test'}}));
+	}
+	addBlog();
+	getBlogs();
 
 //   subscribeGraphQL<OnCreatePostSubscription>(
 //       onCreatePost
@@ -36,6 +43,6 @@
 				tell Sapper to load the data for the page as soon as
 				the user hovers over the link or taps it, instead of
 				waiting for the 'click' event -->
-		<li><a rel="prefetch" href="posts/{post.title}">{post.title}</a></li>
+		<li><a rel="prefetch" href="posts/{post.name}">{post.name}</a></li>
 	{/each}
 </ul>
