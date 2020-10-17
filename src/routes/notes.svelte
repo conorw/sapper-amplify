@@ -1,21 +1,21 @@
 <script lang="ts">
- 	import {listPosts} from '../graphql/queries';
+ 	import {listBlogs, listPosts} from '../graphql/queries';
  	import {onCreatePost} from '../graphql/subscriptions';
- 	import { graphqlOperation } from 'aws-amplify';
+ 	import { API, graphqlOperation } from 'aws-amplify';
  	import callGraphQL from "../models/graphql-api";
 	 import subscribeGraphQL from "../models/graphql-api";
 	 //import { Schema } from '@aws-amplify/datastore';
-	import { Post } from '../models';
-// 	import type { ListPostsQuery, OnCreatePostSubscription } from '../API';
+	import type { Blog, Post } from '../models';
+	import type { ListBlogsQuery, ListPostsQuery, OnCreatePostSubscription } from '../API';
 
-// 	// in this way you are only importing Auth and configuring it.
-// 	Amplify.configure(aws_exports);
-// 	let posts: Post[];
-// 	async function getPosts(){
-// 		const result = await callGraphQL<ListPostsQuery>(graphqlOperation(listPosts));
-// 		posts = result.data.listPosts.items;
-// 	}
-// 	getPosts();
+	// in this way you are only importing Auth and configuring it.
+	let posts: any[] = [];
+	async function getPosts(){
+		//const result = await callGraphQL<ListBlogsQuery>(graphqlOperation(listBlogs));
+			const result = await API.graphql(graphqlOperation(listBlogs));
+			// posts = result.data.listBlogs.items;
+	}
+	getPosts();
 
 //   subscribeGraphQL<OnCreatePostSubscription>(
 //       onCreatePost

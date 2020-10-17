@@ -27,7 +27,7 @@
         "IdentityPoolName": "amplifyserver259e6110_identitypool_259e6110__master",
         "UserPoolName": "amplifyserver259e6110_userpool_259e6110"
       },
-      "lastPushTimeStamp": "2020-10-16T17:04:29.571Z",
+      "lastPushTimeStamp": "2020-10-17T20:07:59.350Z",
       "providerMetadata": {
         "s3TemplateURL": "https://s3.amazonaws.com/amplify-amplifystarter-master-141730-deployment/amplify-cfn-templates/auth/amplifyserver259e6110-cloudformation-template.yml",
         "logicalId": "authamplifyserver259e6110"
@@ -52,12 +52,12 @@
         "GraphQLAPIIdOutput": "4c2je7fdpvgr3hrl6ibiw5dxua",
         "GraphQLAPIEndpointOutput": "https://3j7sz7czgbeltbruj4pyjzsm4i.appsync-api.eu-west-1.amazonaws.com/graphql"
       },
-      "lastPushTimeStamp": "2020-10-16T17:04:29.579Z",
+      "lastPushTimeStamp": "2020-10-17T20:07:59.358Z",
       "providerMetadata": {
         "s3TemplateURL": "https://s3.amazonaws.com/amplify-amplifystarter-master-141730-deployment/amplify-cfn-templates/api/cloudformation-template.json",
         "logicalId": "apisapper"
       },
-      "lastPushDirHash": "Ppn6ALzOx4wWMWhxOnRy3mO7unY="
+      "lastPushDirHash": "z23rucUCqphKWhboRV/Xbb7E/UU="
     }
   }
 }
