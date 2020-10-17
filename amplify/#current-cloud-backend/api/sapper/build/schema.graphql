@@ -2,6 +2,9 @@ type Blog {
   id: ID!
   name: String!
   posts(filter: ModelPostFilterInput, sortDirection: ModelSortDirection, limit: Int, nextToken: String): ModelPostConnection
+  _version: Int!
+  _deleted: Boolean
+  _lastChangedAt: AWSTimestamp!
   createdAt: AWSDateTime!
   updatedAt: AWSDateTime!
 }
@@ -13,6 +16,9 @@ type Post {
   blogID: ID!
   blog: Blog
   comments(content: ModelStringKeyConditionInput, filter: ModelCommentFilterInput, sortDirection: ModelSortDirection, limit: Int, nextToken: String): ModelCommentConnection
+  _version: Int!
+  _deleted: Boolean
+  _lastChangedAt: AWSTimestamp!
   createdAt: AWSDateTime!
   updatedAt: AWSDateTime!
 }
@@ -22,6 +28,9 @@ type Comment {
   postID: ID!
   post: Post
   content: String!
+  _version: Int!
+  _deleted: Boolean
+  _lastChangedAt: AWSTimestamp!
   createdAt: AWSDateTime!
   updatedAt: AWSDateTime!
 }
@@ -34,6 +43,7 @@ enum ModelSortDirection {
 type ModelBlogConnection {
   items: [Blog]
   nextToken: String
+  startedAt: AWSTimestamp
 }
 
 input ModelStringInput {
@@ -131,10 +141,13 @@ enum ModelAttributeTypes {
 }
 
 type Query {
+  syncBlogs(filter: ModelBlogFilterInput, limit: Int, nextToken: String, lastSync: AWSTimestamp): ModelBlogConnection
   getBlog(id: ID!): Blog
   listBlogs(filter: ModelBlogFilterInput, limit: Int, nextToken: String): ModelBlogConnection
+  syncPosts(filter: ModelPostFilterInput, limit: Int, nextToken: String, lastSync: AWSTimestamp): ModelPostConnection
   getPost(id: ID!): Post
   listPosts(filter: ModelPostFilterInput, limit: Int, nextToken: String): ModelPostConnection
+  syncComments(filter: ModelCommentFilterInput, limit: Int, nextToken: String, lastSync: AWSTimestamp): ModelCommentConnection
   getComment(id: ID!): Comment
   listComments(filter: ModelCommentFilterInput, limit: Int, nextToken: String): ModelCommentConnection
 }
@@ -142,15 +155,18 @@ type Query {
 input CreateBlogInput {
   id: ID
   name: String!
+  _version: Int
 }
 
 input UpdateBlogInput {
   id: ID!
   name: String
+  _version: Int
 }
 
 input DeleteBlogInput {
   id: ID
+  _version: Int
 }
 
 type Mutation {
@@ -187,6 +203,7 @@ type Subscription {
 type ModelPostConnection {
   items: [Post]
   nextToken: String
+  startedAt: AWSTimestamp
 }
 
 input ModelPostFilterInput {
@@ -204,6 +221,7 @@ input CreatePostInput {
   title: String!
   content: String!
   blogID: ID!
+  _version: Int
 }
 
 input UpdatePostInput {
@@ -211,10 +229,12 @@ input UpdatePostInput {
   title: String
   content: String
   blogID: ID
+  _version: Int
 }
 
 input DeletePostInput {
   id: ID
+  _version: Int
 }
 
 input ModelPostConditionInput {
@@ -229,6 +249,7 @@ input ModelPostConditionInput {
 type ModelCommentConnection {
   items: [Comment]
   nextToken: String
+  startedAt: AWSTimestamp
 }
 
 input ModelCommentFilterInput {
@@ -244,16 +265,19 @@ input CreateCommentInput {
   id: ID
   postID: ID!
   content: String!
+  _version: Int
 }
 
 input UpdateCommentInput {
   id: ID!
   postID: ID
   content: String
+  _version: Int
 }
 
 input DeleteCommentInput {
   id: ID
+  _version: Int
 }
 
 input ModelCommentConditionInput {

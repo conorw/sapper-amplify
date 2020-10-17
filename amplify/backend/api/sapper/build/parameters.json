@@ -2,12 +2,6 @@
     "AppSyncApiName": "sapper",
     "DynamoDBBillingMode": "PAY_PER_REQUEST",
     "DynamoDBEnableServerSideEncryption": false,
-    "AuthCognitoUserPoolId": {
-        "Fn::GetAtt": [
-            "authamplifyserver259e6110",
-            "Outputs.UserPoolId"
-        ]
-    },
     "S3DeploymentBucket": "amplify-amplifystarter-master-141730-deployment",
-    "S3DeploymentRootKey": "amplify-appsync-files/fe549ea42adad133169afb2a403ae6bf57647396"
+    "S3DeploymentRootKey": "amplify-appsync-files/372565334adc15f65b30e2f736fd1e19e9ebed84"
 }
