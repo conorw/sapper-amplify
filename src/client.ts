@@ -6,3 +6,7 @@ Amplify.configure(awsconfig);
 sapper.start({
 	target: document.querySelector('#sapper')
 });
+
+async function login() {
+	Auth. = async () => await Auth.currentCredentials();
+}

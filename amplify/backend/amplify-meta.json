@@ -27,7 +27,7 @@
         "IdentityPoolName": "amplifyserver259e6110_identitypool_259e6110__master",
         "UserPoolName": "amplifyserver259e6110_userpool_259e6110"
       },
-      "lastPushTimeStamp": "2020-10-18T01:05:14.120Z",
+      "lastPushTimeStamp": "2020-10-18T01:07:15.563Z",
       "providerMetadata": {
         "s3TemplateURL": "https://s3.amazonaws.com/amplify-amplifystarter-master-141730-deployment/amplify-cfn-templates/auth/amplifyserver259e6110-cloudformation-template.yml",
         "logicalId": "authamplifyserver259e6110"
@@ -42,7 +42,7 @@
       "output": {
         "authConfig": {
           "defaultAuthentication": {
-            "authenticationType": "AMAZON_COGNITO_USER_POOLS",
+            "authenticationType": "API_KEY",
             "apiKeyConfig": {
               "apiKeyExpirationDays": 7,
               "description": "public-key"
@@ -54,7 +54,7 @@
         "GraphQLAPIEndpointOutput": "https://3j7sz7czgbeltbruj4pyjzsm4i.appsync-api.eu-west-1.amazonaws.com/graphql",
         "GraphQLAPIKeyOutput": "da2-uynvzsmkibgh3hhqja7n4dmhpe"
       },
-      "lastPushTimeStamp": "2020-10-18T01:05:14.136Z",
+      "lastPushTimeStamp": "2020-10-18T01:07:15.579Z",
       "providerMetadata": {
         "s3TemplateURL": "https://s3.amazonaws.com/amplify-amplifystarter-master-141730-deployment/amplify-cfn-templates/api/cloudformation-template.json",
         "logicalId": "apisapper"

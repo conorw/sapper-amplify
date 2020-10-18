@@ -168,7 +168,7 @@
                         }
                     ]
                 },
-                "AuthenticationType": "AMAZON_COGNITO_USER_POOLS"
+                "AuthenticationType": "API_KEY"
             }
         },
         "GraphQLAPIKey": {
