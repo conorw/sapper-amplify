@@ -27,12 +27,12 @@
         "IdentityPoolName": "amplifyserver259e6110_identitypool_259e6110__master",
         "UserPoolName": "amplifyserver259e6110_userpool_259e6110"
       },
-      "lastPushTimeStamp": "2020-10-18T01:07:15.563Z",
+      "lastPushTimeStamp": "2020-10-18T09:52:17.121Z",
       "providerMetadata": {
         "s3TemplateURL": "https://s3.amazonaws.com/amplify-amplifystarter-master-141730-deployment/amplify-cfn-templates/auth/amplifyserver259e6110-cloudformation-template.yml",
         "logicalId": "authamplifyserver259e6110"
       },
-      "lastPushDirHash": "CsSxjawt4zUq8q+42D22ZhJCmj8="
+      "lastPushDirHash": "sczEor+KfGRBeS1f0LBAka7GpBg="
     }
   },
   "api": {
@@ -42,10 +42,9 @@
       "output": {
         "authConfig": {
           "defaultAuthentication": {
-            "authenticationType": "API_KEY",
-            "apiKeyConfig": {
-              "apiKeyExpirationDays": 7,
-              "description": "public-key"
+            "authenticationType": "AMAZON_COGNITO_USER_POOLS",
+            "userPoolConfig": {
+              "userPoolId": "authamplifyserver259e6110"
             }
           },
           "additionalAuthenticationProviders": []
@@ -54,7 +53,7 @@
         "GraphQLAPIEndpointOutput": "https://3j7sz7czgbeltbruj4pyjzsm4i.appsync-api.eu-west-1.amazonaws.com/graphql",
         "GraphQLAPIKeyOutput": "da2-uynvzsmkibgh3hhqja7n4dmhpe"
       },
-      "lastPushTimeStamp": "2020-10-18T01:07:15.579Z",
+      "lastPushTimeStamp": "2020-10-18T10:00:09.035Z",
       "providerMetadata": {
         "s3TemplateURL": "https://s3.amazonaws.com/amplify-amplifystarter-master-141730-deployment/amplify-cfn-templates/api/cloudformation-template.json",
         "logicalId": "apisapper"
