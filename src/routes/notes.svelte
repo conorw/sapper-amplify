@@ -44,7 +44,7 @@
 
 	async function addBlog(){
 		//const result = await callGraphQL<ListBlogsQuery>(graphqlOperation(listBlogs));
-			const result = await API.graphql(graphqlOperation(createBlog, {input: {name: 'test'}}), {authMode: 'API_KEY'});
+			const result = await API.graphql(graphqlOperation(createBlog, {input: {name: 'test'}}));
 	}
 	addBlog();
 	getBlogs();

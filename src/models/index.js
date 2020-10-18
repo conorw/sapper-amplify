@@ -4,7 +4,6 @@ import { schema } from './schema';
 
 
 
-// @ts-ignore
 const { Blog, Post, Comment } = initSchema(schema);
 
 export {
